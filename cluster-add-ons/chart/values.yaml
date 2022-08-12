@@ -20,5 +20,5 @@ ingressNginx:
 
 # Metrics Server Values
 metricsServer:
-  enable: false
+  enable: true
 
