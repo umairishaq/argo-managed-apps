@@ -1,0 +1,24 @@
+# Global Values
+repoUrl: "https://github.com/aws-samples/eks-blueprints-add-ons.git"
+targetRevision: HEAD
+region: ""
+account: ""
+clusterName: ""
+
+# Cluster Autoscaler Values
+clusterAutoscaler:
+  enable: false
+  serviceAccountName:
+
+# External Secrets Operator
+externalSecrets:
+  enable: false
+
+# Nginx Values
+ingressNginx:
+  enable: false
+
+# Metrics Server Values
+metricsServer:
+  enable: false
+
