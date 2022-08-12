@@ -1,5 +1,5 @@
 # Global Values
-repoUrl: "https://github.com/aws-samples/eks-blueprints-add-ons.git"
+repoUrl: "https://github.com/umairishaq/argo-managed-apps.git"
 targetRevision: HEAD
 region: ""
 account: ""
@@ -8,7 +8,7 @@ clusterName: ""
 # Cluster Autoscaler Values
 clusterAutoscaler:
   enable: false
-  serviceAccountName:
+  serviceAccountName: "cluster-autoscaler-sa"
 
 # External Secrets Operator
 externalSecrets:
