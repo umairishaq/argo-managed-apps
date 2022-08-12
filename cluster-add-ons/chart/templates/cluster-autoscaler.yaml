@@ -10,7 +10,7 @@ spec:
   project: workload-add-ons
   source:
     repoURL: {{ .Values.repoUrl }}
-    path: add-ons/cluster-autoscaler
+    path: cluster-add-ons/add-ons/metrics-server
     targetRevision: {{ .Values.targetRevision }}
     helm:
       values: |
