@@ -12,7 +12,7 @@ clusterAutoscaler:
 
 # External Secrets Operator
 externalSecrets:
-  enable: true
+  enable: false
 
 # Nginx Values
 ingressNginx:

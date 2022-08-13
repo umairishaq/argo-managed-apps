@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     repoURL: {{ .Values.repoUrl }}
-    path: "cluster-add-ons/add-ons/metrics-server"
+    path: "add-ons/metrics-server"
     targetRevision: {{ .Values.targetRevision }}
   destination:
     server: {{ .Values.clusterName }}
