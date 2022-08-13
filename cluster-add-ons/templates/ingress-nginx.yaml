@@ -17,7 +17,7 @@ spec:
         ingress-nginx:
         {{- toYaml .Values.ingressNginx | nindent 10 }}
   destination:
-    server: {{ .Values.clusterName }}
+    server: {{ .Values.clusterUrl }}
     namespace: ingress-nginx
   syncPolicy:
     automated:

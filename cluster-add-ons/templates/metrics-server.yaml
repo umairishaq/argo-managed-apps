@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: metrics-server-2
+  name: metrics-server
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -12,8 +12,12 @@ spec:
     repoURL: {{ .Values.repoUrl }}
     path: cluster-add-ons/add-ons/metrics-server
     targetRevision: {{ .Values.targetRevision }}
+    helm:
+      values: |
+        metrics-server:
+        {{- toYaml .Values.metricsServer | nindent 10 }}
   destination:
-    server: {{ .Values.clusterName }}
+    server: {{ .Values.clusterUrl }}
     namespace: kube-system
   syncPolicy:
     automated:
