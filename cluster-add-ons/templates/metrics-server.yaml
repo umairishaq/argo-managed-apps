@@ -7,7 +7,7 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: workload-add-ons
+  project: default
   source:
     repoURL: {{ .Values.repoUrl }}
     path: "cluster-add-ons/add-ons/metrics-server"
