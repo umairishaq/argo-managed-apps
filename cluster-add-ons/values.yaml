@@ -8,16 +8,16 @@ clusterUrl: ""
 
 # Cluster Autoscaler Values
 clusterAutoscaler:
-  enable: false
+  enable: true
   serviceAccountName: "cluster-autoscaler-sa"
 
 # External Secrets Operator
 externalSecrets:
-  enable: false
+  enable: true
 
 # Nginx Values
 ingressNginx:
-  enable: false
+  enable: true
 
 # Metrics Server Values
 metricsServer:
