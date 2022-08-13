@@ -12,10 +12,6 @@ spec:
     repoURL: {{ .Values.repoUrl }}
     path: "cluster-add-ons/add-ons/metrics-server"
     targetRevision: {{ .Values.targetRevision }}
-    helm:
-      values: |
-        metrics-server:
-        {{- toYaml .Values.metricsServer | nindent 10 }}
   destination:
     server: {{ .Values.clusterName }}
     namespace: kube-system
