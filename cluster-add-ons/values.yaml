@@ -8,8 +8,8 @@ clusterUrl: ""
 
 # Cluster Autoscaler Values
 clusterAutoscaler:
-  enable: true
-  serviceAccountName: "cluster-autoscalar-sa"
+  enable: false
+  serviceAccountName: "cluster-autoscaler-sa"
 
 # External Secrets Operator
 externalSecrets:
