@@ -23,11 +23,11 @@ spec:
     metadata:
       name: '{{path.basename}}'
     spec:
-      project: '{{path.basename}}'
+      project: default
       source:
         repoURL: https://github.com/umairishaq/argo-managed-apps.git
         targetRevision: HEAD
-        path: '{{path}}'
+        path: 'multi-target/apps/{{path.basename}}'
       destination:
         server: '{{cluster.address}}'
         namespace: '{{path.basename}}'
