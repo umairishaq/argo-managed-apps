@@ -4,18 +4,11 @@ metadata:
   name: multi-app-cluster-appset
 spec:
   generators:
-    - matrix:
-        generators:
-          - git:
-              repoURL: https://github.com/umairishaq/argo-managed-apps.git
-              revision: HEAD
-              files:
-                - path: multi-target/clusters/*.json
-          # - git:
-          #     repoURL: https://github.com/umairishaq/argo-managed-apps.git
-          #     revision: HEAD
-          #     directories:
-          #       - path: multi-target/apps/*
+    - git:
+        repoURL: https://github.com/umairishaq/argo-managed-apps.git
+        revision: HEAD
+        files:
+        - path: "multi-target/clusters/*.json"
   template:
     metadata:
       name: '{{cluster.name}}-app-of-apps'
