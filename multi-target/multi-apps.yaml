@@ -1,33 +1,31 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: cluster-git
+  name: multi-app-cluster-appset
 spec:
   generators:
-    # matrix 'parent' generator
     - matrix:
         generators:
-          # git generator, 'child' #1
-          # cluster generator, 'child' #2
           - git:
               repoURL: https://github.com/umairishaq/argo-managed-apps.git
               revision: HEAD
               files:
                 - path: multi-target/clusters/*.json
-          - git:
-              repoURL: https://github.com/umairishaq/argo-managed-apps.git
-              revision: HEAD
-              directories:
-                - path: multi-target/apps/*
+          # - git:
+          #     repoURL: https://github.com/umairishaq/argo-managed-apps.git
+          #     revision: HEAD
+          #     directories:
+          #       - path: multi-target/apps/*
   template:
     metadata:
-      name: '{{path.basename}}'
+      name: '{{cluster.name}}-app-of-apps'
     spec:
       project: default
       source:
         repoURL: https://github.com/umairishaq/argo-managed-apps.git
         targetRevision: HEAD
-        path: 'multi-target/apps/{{path.basename}}'
+        path: 'multi-target/apps/'
+        directory:
+          recurse: true
       destination:
         server: '{{cluster.address}}'
-        namespace: '{{path.basename}}'
